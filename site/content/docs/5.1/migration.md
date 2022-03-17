@@ -72,7 +72,22 @@ Your custom Bootstrap CSS builds should now look something like this with a sepa
 
   Read more about CSS variables in each component on their respective documentation pages.
 
-- **Updated our grid systems** so that containers now keep their gutter values, and enabling the experimental CSS Grid no longer removes container classes.
+- **Thicker table dividers are now opt-in. —** We've removed the thicker and more difficult to override border between table groups and moved it to an optional class you can apply, `.table-group-divider`. [See the table docs for an example.]({{< docsref "/content/tables#table-group-dividers" >}})
+
+- **Updated several components to use CSS variables. —** While Sass still underpins everything, each of these components have been updated to include several CSS variables on the component base classes (e.g., `.btn`), allowing for more real-time customization of Bootstrap. The following components are now built with CSS variables:
+
+  - [Alerts]({{< docsref "/components/alerts/" >}})
+  - [Badges]({{< docsref "/components/badge/" >}})
+  - [Breadcrumbs]({{< docsref "/components/breadcrumb/" >}})
+  - [Buttons]({{< docsref "/components/buttons/" >}})
+  - [Dropdowns]({{< docsref "/components/dropdowns/" >}})
+  - [Navbars]({{< docsref "/components/navbar/" >}})
+  - [Popovers]({{< docsref "/components/popovers/" >}})
+  - [Tooltips]({{< docsref "/components/tooltips/" >}})
+
+- **Alerts, badges, breadcrumbs, buttons, navbars, popovers, and tooltips are now built with CSS variables. —** While Sass still underpins everything, each of these components have been updated to include several CSS variables on the component base classes (e.g., `.btn`), allowing for more real-time customization of Bootstrap.
+
+- Updated our grid systems so that containers now keep their gutter values, and enabling the experimental CSS Grid no longer removes container classes.
 
 ## v5.1.0
 
@@ -101,6 +116,8 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.getbootstrap.co
 {{< callout info >}}
 **Hey there!** Changes to our first major release of Bootstrap 5, v5.0.0, are documented below. They don't reflect the additional changes shown above.
 {{< /callout >}}
+
+- **Popovers and tooltips now use CSS variables.** Both components have been updated to use CSS variables on their base classes, `.popover` and `.tooltip`. Some CSS variables have been updated from their Sass counterparts to reduce the number of variables. As a result, three variables have been deprecated in this release: `$popover-arrow-color`, `$popover-arrow-outer-color`, and `$tooltip-arrow-color`.
 
 ## Dependencies
 
@@ -258,6 +275,8 @@ Want more information? [Read the v5.1.0 blog post.](https://blog.getbootstrap.co
 - <span class="badge bg-danger">Breaking</span> Form labels now require `.form-label`.
 
 - <span class="badge bg-danger">Breaking</span> `.form-text` no longer sets `display`, allowing you to create inline or block help text as you wish just by changing the HTML element.
+
+- Form controls no longer used fixed `height` when possible, instead deferring to `min-height` to improve customization and compatibility with other components.
 
 - Validation icons are no longer applied to `<select>`s with `multiple`.
 
